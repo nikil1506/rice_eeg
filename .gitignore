@@ -6,6 +6,7 @@ eeg_coherence_features.csv
 eeg_coherence_features_cleaned.csv
 eeg_psd_features.csv
 data.csv
+final_output.csv
 en.ipynb
 ensemble1.ipynb
 ensemble.ipynb
