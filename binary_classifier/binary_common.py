@@ -8,105 +8,108 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 from sklearn.metrics import roc_curve
 from sklearn.decomposition import PCA
 
-# relevant_columns = [
-#     "main.disorder",  # Target variable
-#     # Schizophrenia (alpha PSD)
-#     "AB.C.alpha.a.FP1",
-#     "AB.C.alpha.b.FP2",
-#     "AB.C.alpha.c.F7",
-#     "AB.C.alpha.d.F3",
-#     "AB.C.alpha.e.Fz",
-#     "AB.C.alpha.f.F4",
-#     "AB.C.alpha.g.F8",
-#     "AB.C.alpha.h.T3",
-#     "AB.C.alpha.i.C3",
-#     "AB.C.alpha.j.Cz",
-#     "AB.C.alpha.k.C4",
-#     "AB.C.alpha.l.T4",
-#     "AB.C.alpha.m.T5",
-#     "AB.C.alpha.n.P3",
-#     "AB.C.alpha.o.Pz",
-#     "AB.C.alpha.p.P4",
-#     "AB.C.alpha.q.T6",
-#     "AB.C.alpha.r.O1",
-#     "AB.C.alpha.s.O2",
-#     # Trauma and stress-related disorders (beta FC)
-#     "COH.D.beta.a.FP1.b.FP2",
-#     "COH.D.beta.c.F7.d.F3",
-#     "COH.D.beta.e.Fz.f.F4",
-#     "COH.D.beta.g.F8.h.T3",
-#     "COH.D.beta.i.C3.j.Cz",
-#     "COH.D.beta.k.C4.l.T4",
-#     "COH.D.beta.m.T5.n.P3",
-#     "COH.D.beta.o.Pz.p.P4",
-#     "COH.D.beta.q.T6.r.O1",
-#     # Anxiety disorders (whole band PSD: all frequency bands)
-#     "AB.A.delta.a.FP1",
-#     "AB.A.delta.b.FP2",
-#     "AB.B.theta.a.FP1",
-#     "AB.B.theta.b.FP2",
-#     "AB.C.alpha.a.FP1",
-#     "AB.C.alpha.b.FP2",
-#     "AB.D.beta.a.FP1",
-#     "AB.D.beta.b.FP2",
-#     "AB.E.highbeta.a.FP1",
-#     "AB.E.highbeta.b.FP2",
-#     "AB.F.gamma.a.FP1",
-#     "AB.F.gamma.b.FP2",
-#     # Mood disorders (theta FC)
-#     "COH.B.theta.a.FP1.b.FP2",
-#     "COH.B.theta.c.F7.d.F3",
-#     "COH.B.theta.e.Fz.f.F4",
-#     "COH.B.theta.g.F8.h.T3",
-#     "COH.B.theta.i.C3.j.Cz",
-#     "COH.B.theta.k.C4.l.T4",
-#     "COH.B.theta.m.T5.n.P3",
-#     "COH.B.theta.o.Pz.p.P4",
-#     "COH.B.theta.q.T6.r.O1",
-#     # Addictive disorders (theta PSD)
-#     "AB.B.theta.a.FP1",
-#     "AB.B.theta.b.FP2",
-#     "AB.B.theta.c.F7",
-#     "AB.B.theta.d.F3",
-#     "AB.B.theta.e.Fz",
-#     "AB.B.theta.f.F4",
-#     "AB.B.theta.g.F8",
-#     "AB.B.theta.h.T3",
-#     "AB.B.theta.i.C3",
-#     "AB.B.theta.j.Cz",
-#     "AB.B.theta.k.C4",
-#     "AB.B.theta.l.T4",
-#     "AB.B.theta.m.T5",
-#     "AB.B.theta.n.P3",
-#     "AB.B.theta.o.Pz",
-#     "AB.B.theta.p.P4",
-#     "AB.B.theta.q.T6",
-#     "AB.B.theta.r.O1",
-#     "AB.B.theta.s.O2",
-#     # Obsessive-compulsive disorder (gamma FC)
-#     "COH.F.gamma.a.FP1.b.FP2",
-#     "COH.F.gamma.c.F7.d.F3",
-#     "COH.F.gamma.e.Fz.f.F4",
-#     "COH.F.gamma.g.F8.h.T3",
-#     "COH.F.gamma.i.C3.j.Cz",
-#     "COH.F.gamma.k.C4.l.T4",
-#     "COH.F.gamma.m.T5.n.P3",
-#     "COH.F.gamma.o.Pz.p.P4",
-#     "COH.F.gamma.q.T6.r.O1",
-# ]
+important_columns = [
+        # Schizophrenia (alpha PSD)
+    "AB.C.alpha.a.FP1",
+    "AB.C.alpha.b.FP2",
+    "AB.C.alpha.c.F7",
+    "AB.C.alpha.d.F3",
+    "AB.C.alpha.e.Fz",
+    "AB.C.alpha.f.F4",
+    "AB.C.alpha.g.F8",
+    "AB.C.alpha.h.T3",
+    "AB.C.alpha.i.C3",
+    "AB.C.alpha.j.Cz",
+    "AB.C.alpha.k.C4",
+    "AB.C.alpha.l.T4",
+    "AB.C.alpha.m.T5",
+    "AB.C.alpha.n.P3",
+    "AB.C.alpha.o.Pz",
+    "AB.C.alpha.p.P4",
+    "AB.C.alpha.q.T6",
+    "AB.C.alpha.r.O1",
+    "AB.C.alpha.s.O2",
+    # Trauma and stress-related disorders (beta FC)
+    "COH.D.beta.a.FP1.b.FP2",
+    "COH.D.beta.c.F7.d.F3",
+    "COH.D.beta.e.Fz.f.F4",
+    "COH.D.beta.g.F8.h.T3",
+    "COH.D.beta.i.C3.j.Cz",
+    "COH.D.beta.k.C4.l.T4",
+    "COH.D.beta.m.T5.n.P3",
+    "COH.D.beta.o.Pz.p.P4",
+    "COH.D.beta.q.T6.r.O1",
+    # Anxiety disorders (whole band PSD: all frequency bands)
+    "AB.A.delta.a.FP1",
+    "AB.A.delta.b.FP2",
+    "AB.B.theta.a.FP1",
+    "AB.B.theta.b.FP2",
+    # "AB.C.alpha.a.FP1",
+    # "AB.C.alpha.b.FP2",
+    "AB.D.beta.a.FP1",
+    "AB.D.beta.b.FP2",
+    "AB.E.highbeta.a.FP1",
+    "AB.E.highbeta.b.FP2",
+    "AB.F.gamma.a.FP1",
+    "AB.F.gamma.b.FP2",
+    # Mood disorders (theta FC)
+    "COH.B.theta.a.FP1.b.FP2",
+    "COH.B.theta.c.F7.d.F3",
+    "COH.B.theta.e.Fz.f.F4",
+    "COH.B.theta.g.F8.h.T3",
+    "COH.B.theta.i.C3.j.Cz",
+    "COH.B.theta.k.C4.l.T4",
+    "COH.B.theta.m.T5.n.P3",
+    "COH.B.theta.o.Pz.p.P4",
+    "COH.B.theta.q.T6.r.O1",
+    # Addictive disorders (theta PSD)
+    # "AB.B.theta.a.FP1",
+    # "AB.B.theta.b.FP2",
+    "AB.B.theta.c.F7",
+    "AB.B.theta.d.F3",
+    "AB.B.theta.e.Fz",
+    "AB.B.theta.f.F4",
+    "AB.B.theta.g.F8",
+    "AB.B.theta.h.T3",
+    "AB.B.theta.i.C3",
+    "AB.B.theta.j.Cz",
+    "AB.B.theta.k.C4",
+    "AB.B.theta.l.T4",
+    "AB.B.theta.m.T5",
+    "AB.B.theta.n.P3",
+    "AB.B.theta.o.Pz",
+    "AB.B.theta.p.P4",
+    "AB.B.theta.q.T6",
+    "AB.B.theta.r.O1",
+    "AB.B.theta.s.O2",
+    # Obsessive-compulsive disorder (gamma FC)
+    "COH.F.gamma.a.FP1.b.FP2",
+    "COH.F.gamma.c.F7.d.F3",
+    "COH.F.gamma.e.Fz.f.F4",
+    "COH.F.gamma.g.F8.h.T3",
+    "COH.F.gamma.i.C3.j.Cz",
+    "COH.F.gamma.k.C4.l.T4",
+    "COH.F.gamma.m.T5.n.P3",
+    "COH.F.gamma.o.Pz.p.P4",
+    "COH.F.gamma.q.T6.r.O1",
+]
+
 
 
 def read_file(file_path, columns=None):
     if columns is None:
         data = pd.read_csv(file_path).drop(
-            columns=["ID", "eeg.date", "specific.disorder"]
+            columns=["ID", "eeg.date", "specific.disorder", "age", "IQ", "main.disorder"]
         )
     else:
         data = pd.read_csv(file_path, usecols=columns)
     if "sex" in data.columns:
         data["sex"] = data["sex"].map({"M": 0, "F": 1})
     data = data.dropna(how="all", axis=1)
-    data = data.dropna()
+    data = data.fillna(data.mean())
+        
+    weight_factor = 2.0
+    data[important_columns] *= weight_factor
     return data
 
 
@@ -116,14 +119,13 @@ false_label = "Healthy control"
 
 def binary_training(true_label):
     # Load dataset with only relevant columns
-    data = read_file("data/train.csv", relevant_columns)
-    data["main.disorder"] = data["main.disorder"].apply(
-        lambda x: {false_label: 0, true_label: 1}.get(x, 0)
-    )
+    data = read_file("data/train.csv", relevant_columns) 
 
     # Features and labels
-    X = data.drop(columns=["main.disorder"]).values
-    y = data["main.disorder"].values.astype(int)  # Ensure integer labels
+    X = data.values
+    y = pd.read_csv("data/train.csv")["main.disorder"].apply(
+        lambda x: {false_label: 0, true_label: 1}.get(x, 0)
+    ).values.astype(int)
 
     # Standardize features
     scaler = StandardScaler()
@@ -152,6 +154,7 @@ def binary_training(true_label):
 
     grid_search = GridSearchCV(
         svm, param_grid, cv=10, scoring="roc_auc", n_jobs=-1, verbose=1
+        
     )
     grid_search.fit(X_train, y_train)
 
@@ -197,7 +200,6 @@ def predict_mood_disorder(new_data_path, true_label):
 
     # Load new data
     cols = relevant_columns.copy()
-    cols.remove("main.disorder")
     new_data = read_file(new_data_path, cols)
 
     # Convert DataFrame to NumPy before applying StandardScaler
@@ -225,7 +227,7 @@ def get_prediction_label(pred, true_label, optimal_threshold):
 
 
 def binary_predictions(optimal_threshold, true_label):
-    preds = predict_mood_disorder("data.csv", true_label)
+    preds = predict_mood_disorder("data/test.csv", true_label)
     # Example usage
     pred_labels = (preds >= optimal_threshold).astype(
         int
@@ -239,7 +241,7 @@ def binary_predictions(optimal_threshold, true_label):
     output_df = pd.DataFrame(
         {
             "y_pred": decoded_labels,
-            "y_true": read_file("data.csv", relevant_columns)["main.disorder"],
+            "y_true": pd.read_csv("data/test.csv")["main.disorder"],
         }
     )
 

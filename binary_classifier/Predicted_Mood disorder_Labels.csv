@@ -19,14 +19,14 @@ Healthy control,Addictive disorder
 Healthy control,Trauma and stress related disorder
 Mood disorder,Mood disorder
 Healthy control,Mood disorder
-Mood disorder,Mood disorder
+Healthy control,Mood disorder
 Healthy control,Healthy control
 Healthy control,Schizophrenia
 Healthy control,Healthy control
 Healthy control,Mood disorder
 Mood disorder,Anxiety disorder
 Healthy control,Schizophrenia
-Mood disorder,Trauma and stress related disorder
+Healthy control,Trauma and stress related disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Addictive disorder
 Healthy control,Addictive disorder
@@ -43,11 +43,11 @@ Healthy control,Trauma and stress related disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Obsessive compulsive disorder
 Healthy control,Anxiety disorder
-Mood disorder,Mood disorder
+Healthy control,Mood disorder
 Healthy control,Addictive disorder
 Mood disorder,Trauma and stress related disorder
 Healthy control,Mood disorder
-Mood disorder,Trauma and stress related disorder
+Healthy control,Trauma and stress related disorder
 Healthy control,Mood disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Mood disorder
@@ -72,7 +72,7 @@ Healthy control,Anxiety disorder
 Healthy control,Anxiety disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Healthy control
-Healthy control,Addictive disorder
+Mood disorder,Addictive disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Addictive disorder
 Mood disorder,Anxiety disorder
@@ -86,7 +86,7 @@ Healthy control,Obsessive compulsive disorder
 Healthy control,Mood disorder
 Mood disorder,Obsessive compulsive disorder
 Healthy control,Healthy control
-Mood disorder,Obsessive compulsive disorder
+Healthy control,Obsessive compulsive disorder
 Mood disorder,Anxiety disorder
 Healthy control,Anxiety disorder
 Healthy control,Mood disorder
