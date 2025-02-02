@@ -1,93 +1,91 @@
 y_pred,y_true
-Schizophrenia,Schizophrenia
-Schizophrenia,Addictive disorder
+Healthy control,Schizophrenia
+Healthy control,Addictive disorder
 Schizophrenia,Anxiety disorder
 Healthy control,Schizophrenia
-Healthy control,Schizophrenia
-Schizophrenia,Anxiety disorder
 Schizophrenia,Schizophrenia
-Schizophrenia,Anxiety disorder
-Schizophrenia,Anxiety disorder
-Healthy control,Mood disorder
-Schizophrenia,Anxiety disorder
-Schizophrenia,Addictive disorder
-Healthy control,Trauma and stress related disorder
-Healthy control,Obsessive compulsive disorder
-Healthy control,Obsessive compulsive disorder
-Schizophrenia,Schizophrenia
-Schizophrenia,Addictive disorder
-Healthy control,Trauma and stress related disorder
-Schizophrenia,Mood disorder
-Schizophrenia,Mood disorder
-Healthy control,Mood disorder
-Healthy control,Healthy control
-Schizophrenia,Schizophrenia
-Schizophrenia,Healthy control
-Schizophrenia,Mood disorder
 Schizophrenia,Anxiety disorder
 Healthy control,Schizophrenia
+Healthy control,Anxiety disorder
+Schizophrenia,Anxiety disorder
+Schizophrenia,Mood disorder
+Schizophrenia,Anxiety disorder
+Healthy control,Addictive disorder
+Schizophrenia,Trauma and stress related disorder
+Healthy control,Obsessive compulsive disorder
+Healthy control,Obsessive compulsive disorder
+Schizophrenia,Schizophrenia
+Schizophrenia,Addictive disorder
+Healthy control,Trauma and stress related disorder
+Schizophrenia,Mood disorder
+Schizophrenia,Mood disorder
+Schizophrenia,Mood disorder
+Healthy control,Healthy control
+Schizophrenia,Schizophrenia
+Healthy control,Healthy control
+Healthy control,Mood disorder
+Schizophrenia,Anxiety disorder
+Schizophrenia,Schizophrenia
 Schizophrenia,Trauma and stress related disorder
 Healthy control,Trauma and stress related disorder
-Schizophrenia,Addictive disorder
 Healthy control,Addictive disorder
+Schizophrenia,Addictive disorder
 Schizophrenia,Schizophrenia
 Healthy control,Trauma and stress related disorder
 Schizophrenia,Mood disorder
-Schizophrenia,Trauma and stress related disorder
-Schizophrenia,Trauma and stress related disorder
+Healthy control,Trauma and stress related disorder
+Healthy control,Trauma and stress related disorder
 Healthy control,Obsessive compulsive disorder
-Schizophrenia,Obsessive compulsive disorder
-Schizophrenia,Addictive disorder
-Schizophrenia,Trauma and stress related disorder
-Healthy control,Healthy control
-Healthy control,Trauma and stress related disorder
-Healthy control,Trauma and stress related disorder
-Schizophrenia,Obsessive compulsive disorder
-Schizophrenia,Anxiety disorder
-Healthy control,Mood disorder
-Schizophrenia,Addictive disorder
-Schizophrenia,Trauma and stress related disorder
-Healthy control,Mood disorder
-Schizophrenia,Trauma and stress related disorder
-Healthy control,Mood disorder
-Schizophrenia,Trauma and stress related disorder
-Healthy control,Mood disorder
-Schizophrenia,Trauma and stress related disorder
-Healthy control,Healthy control
 Healthy control,Addictive disorder
-Schizophrenia,Mood disorder
-Healthy control,Trauma and stress related disorder
-Schizophrenia,Anxiety disorder
-Healthy control,Trauma and stress related disorder
-Schizophrenia,Anxiety disorder
-Healthy control,Healthy control
-Healthy control,Addictive disorder
-Schizophrenia,Mood disorder
-Schizophrenia,Mood disorder
-Schizophrenia,Addictive disorder
-Schizophrenia,Trauma and stress related disorder
-Schizophrenia,Trauma and stress related disorder
-Schizophrenia,Anxiety disorder
-Schizophrenia,Addictive disorder
-Schizophrenia,Mood disorder
-Schizophrenia,Anxiety disorder
-Schizophrenia,Anxiety disorder
 Schizophrenia,Trauma and stress related disorder
 Schizophrenia,Healthy control
-Schizophrenia,Addictive disorder
 Schizophrenia,Trauma and stress related disorder
-Schizophrenia,Addictive disorder
+Healthy control,Trauma and stress related disorder
+Schizophrenia,Obsessive compulsive disorder
 Schizophrenia,Anxiety disorder
+Healthy control,Mood disorder
+Healthy control,Addictive disorder
 Schizophrenia,Trauma and stress related disorder
+Healthy control,Mood disorder
+Schizophrenia,Trauma and stress related disorder
+Healthy control,Mood disorder
+Schizophrenia,Trauma and stress related disorder
+Healthy control,Mood disorder
+Healthy control,Trauma and stress related disorder
 Healthy control,Healthy control
-Schizophrenia,Anxiety disorder
+Schizophrenia,Addictive disorder
+Healthy control,Mood disorder
+Schizophrenia,Trauma and stress related disorder
+Healthy control,Anxiety disorder
+Schizophrenia,Trauma and stress related disorder
+Healthy control,Anxiety disorder
+Schizophrenia,Healthy control
+Schizophrenia,Addictive disorder
+Healthy control,Mood disorder
+Schizophrenia,Mood disorder
+Healthy control,Addictive disorder
+Schizophrenia,Trauma and stress related disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Addictive disorder
-Healthy control,Addictive disorder
-Schizophrenia,Obsessive compulsive disorder
 Healthy control,Mood disorder
-Healthy control,Obsessive compulsive disorder
+Schizophrenia,Anxiety disorder
+Healthy control,Anxiety disorder
+Healthy control,Trauma and stress related disorder
+Healthy control,Healthy control
+Schizophrenia,Addictive disorder
+Healthy control,Trauma and stress related disorder
+Schizophrenia,Addictive disorder
+Healthy control,Anxiety disorder
+Schizophrenia,Trauma and stress related disorder
 Schizophrenia,Healthy control
+Healthy control,Anxiety disorder
+Schizophrenia,Trauma and stress related disorder
+Schizophrenia,Addictive disorder
+Schizophrenia,Addictive disorder
+Schizophrenia,Obsessive compulsive disorder
+Schizophrenia,Mood disorder
+Schizophrenia,Obsessive compulsive disorder
+Healthy control,Healthy control
 Healthy control,Obsessive compulsive disorder
 Schizophrenia,Anxiety disorder
 Schizophrenia,Anxiety disorder
