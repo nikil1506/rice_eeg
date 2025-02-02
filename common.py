@@ -1,4 +1,5 @@
 import pandas as pd
+from imblearn.under_sampling import RandomUnderSampler
 
 
 def get_column_names(train_df):
@@ -93,6 +94,32 @@ def get_train_df():
     if "sex" in train_df.columns:
         train_df["sex"] = train_df["sex"].map({"M": 0, "F": 1})
     return train_df
+<<<<<<< HEAD
+=======
+
+
+def under_sample_df(df):
+    X = df.drop(columns=["main.disorder"])
+    y = df["main.disorder"]
+    undersample = RandomUnderSampler(sampling_strategy="auto", random_state=42)
+    X_resampled, y_resampled = undersample.fit_resample(X, y)
+    df = X_resampled.copy()
+    df["main.disorder"] = y_resampled
+    return df
+
+
+def over_sample_df(df):
+    from imblearn.over_sampling import SMOTE
+
+    X = df.drop(columns=["main.disorder"])
+    y = df["main.disorder"]
+    smote = SMOTE(sampling_strategy="auto", random_state=42)
+    X_resampled, y_resampled = smote.fit_resample(X, y)
+
+    df_balanced = X_resampled.copy()
+    df_balanced["main.disorder"] = y_resampled
+    return df_balanced
+>>>>>>> 382a49f8ae5becc04353a2399bf6874b51eeecf2
 
 
 def get_accuracy(df):
