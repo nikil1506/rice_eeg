@@ -9,7 +9,7 @@ from sklearn.metrics import roc_curve
 from sklearn.decomposition import PCA
 
 important_columns = [
-        # Schizophrenia (alpha PSD)
+    # Schizophrenia (alpha PSD)
     "AB.C.alpha.a.FP1",
     "AB.C.alpha.b.FP2",
     "AB.C.alpha.c.F7",
@@ -95,11 +95,17 @@ important_columns = [
 ]
 
 
-
 def read_file(file_path, columns=None):
     if columns is None:
         data = pd.read_csv(file_path).drop(
-            columns=["ID", "eeg.date", "specific.disorder", "age", "IQ", "main.disorder"]
+            columns=[
+                "ID",
+                "eeg.date",
+                "main.disorder",
+                "specific.disorder",
+                "age",
+                "IQ",
+            ]
         )
     else:
         data = pd.read_csv(file_path, usecols=columns)
@@ -107,7 +113,6 @@ def read_file(file_path, columns=None):
         data["sex"] = data["sex"].map({"M": 0, "F": 1})
     data = data.dropna(how="all", axis=1)
     data = data.fillna(data.mean())
-        
     weight_factor = 2.0
     data[important_columns] *= weight_factor
     return data
@@ -119,13 +124,15 @@ false_label = "Healthy control"
 
 def binary_training(true_label):
     # Load dataset with only relevant columns
-    data = read_file("data/train.csv", relevant_columns) 
+    data = read_file("data/train.csv", relevant_columns)
 
     # Features and labels
     X = data.values
-    y = pd.read_csv("data/train.csv")["main.disorder"].apply(
-        lambda x: {false_label: 0, true_label: 1}.get(x, 0)
-    ).values.astype(int)
+    y = (
+        pd.read_csv("data/train.csv")["main.disorder"]
+        .apply(lambda x: {false_label: 0, true_label: 1}.get(x, 0))
+        .values.astype(int)
+    )
 
     # Standardize features
     scaler = StandardScaler()
@@ -154,7 +161,6 @@ def binary_training(true_label):
 
     grid_search = GridSearchCV(
         svm, param_grid, cv=10, scoring="roc_auc", n_jobs=-1, verbose=1
-        
     )
     grid_search.fit(X_train, y_train)
 
@@ -235,19 +241,6 @@ def binary_predictions(optimal_threshold, true_label):
     decoded_labels = decode_predictions(pred_labels, true_label)
 
     print("\nPredicted Labels:\n", decoded_labels)
-    import pandas as pd
-
-    # Convert predictions into a DataFrame
-    output_df = pd.DataFrame(
-        {
-            "y_pred": decoded_labels,
-            "y_true": pd.read_csv("data/test.csv")["main.disorder"],
-        }
-    )
-
-    # Save to CSV
-    output_df.to_csv(f"Predicted_{true_label}_Labels.csv", index=False)
-    get_binary_accuracy(output_df, true_label)
     return preds
 
 
