@@ -13,7 +13,7 @@ Schizophrenia,Anxiety disorder
 Healthy control,Addictive disorder
 Schizophrenia,Trauma and stress related disorder
 Healthy control,Obsessive compulsive disorder
-Healthy control,Obsessive compulsive disorder
+Schizophrenia,Obsessive compulsive disorder
 Schizophrenia,Schizophrenia
 Schizophrenia,Addictive disorder
 Healthy control,Trauma and stress related disorder
@@ -32,7 +32,7 @@ Healthy control,Addictive disorder
 Schizophrenia,Addictive disorder
 Schizophrenia,Schizophrenia
 Healthy control,Trauma and stress related disorder
-Schizophrenia,Mood disorder
+Healthy control,Mood disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Obsessive compulsive disorder
@@ -47,7 +47,7 @@ Healthy control,Mood disorder
 Healthy control,Addictive disorder
 Schizophrenia,Trauma and stress related disorder
 Healthy control,Mood disorder
-Schizophrenia,Trauma and stress related disorder
+Healthy control,Trauma and stress related disorder
 Healthy control,Mood disorder
 Schizophrenia,Trauma and stress related disorder
 Healthy control,Mood disorder
@@ -57,13 +57,13 @@ Schizophrenia,Addictive disorder
 Healthy control,Mood disorder
 Schizophrenia,Trauma and stress related disorder
 Healthy control,Anxiety disorder
-Schizophrenia,Trauma and stress related disorder
+Healthy control,Trauma and stress related disorder
 Healthy control,Anxiety disorder
 Schizophrenia,Healthy control
 Schizophrenia,Addictive disorder
 Healthy control,Mood disorder
 Schizophrenia,Mood disorder
-Healthy control,Addictive disorder
+Schizophrenia,Addictive disorder
 Schizophrenia,Trauma and stress related disorder
 Healthy control,Trauma and stress related disorder
 Healthy control,Addictive disorder
@@ -81,7 +81,7 @@ Schizophrenia,Healthy control
 Healthy control,Anxiety disorder
 Schizophrenia,Trauma and stress related disorder
 Schizophrenia,Addictive disorder
-Schizophrenia,Addictive disorder
+Healthy control,Addictive disorder
 Schizophrenia,Obsessive compulsive disorder
 Schizophrenia,Mood disorder
 Schizophrenia,Obsessive compulsive disorder

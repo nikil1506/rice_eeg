@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, roc_auc_score
 from sklearn.metrics import roc_curve
+from sklearn.decomposition import PCA
 
 # relevant_columns = [
 #     "main.disorder",  # Target variable
@@ -129,11 +130,16 @@ def binary_training(true_label):
     X_scaled = scaler.fit_transform(X)
 
     # Save the scaler
+
+    pca = PCA(n_components=30)
+    X_pca = pca.fit_transform(X_scaled)
+
     joblib.dump(scaler, f"{true_label}_Scaler.pkl")
+    joblib.dump(pca, f"{true_label}_Pca.pkl")
 
     # Split into training and testing
     X_train, X_test, y_train, y_test = train_test_split(
-        X_scaled, y, test_size=0.2, random_state=42
+        X_pca, y, test_size=0.2, random_state=42
     )
 
     # ---------------- Hyperparameter Tuning (Grid Search) ----------------
@@ -145,7 +151,7 @@ def binary_training(true_label):
     svm = SVC(probability=True, class_weight="balanced", random_state=42)
 
     grid_search = GridSearchCV(
-        svm, param_grid, cv=5, scoring="roc_auc", n_jobs=-1, verbose=1
+        svm, param_grid, cv=10, scoring="roc_auc", n_jobs=-1, verbose=1
     )
     grid_search.fit(X_train, y_train)
 
@@ -187,18 +193,19 @@ def predict_mood_disorder(new_data_path, true_label):
     # Load saved scaler and model
     scaler = joblib.load(f"{true_label}_Scaler.pkl")
     svm = joblib.load(f"{true_label}_Tuned.pkl")
+    pca = joblib.load(f"{true_label}_Pca.pkl")
 
     # Load new data
-    print(type(relevant_columns))
     cols = relevant_columns.copy()
     cols.remove("main.disorder")
     new_data = read_file(new_data_path, cols)
 
     # Convert DataFrame to NumPy before applying StandardScaler
-    new_data_scaled = scaler.transform(new_data.values)
+    new_data_scaled = scaler.fit_transform(new_data.values)
+    new_data_pca = pca.fit_transform(new_data_scaled)
 
     # Predict probabilities
-    predictions = svm.predict_proba(new_data_scaled)[:, 1]
+    predictions = svm.predict_proba(new_data_pca)[:, 1]
 
     return predictions
 
